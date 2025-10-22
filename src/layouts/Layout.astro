@@ -44,12 +44,18 @@ const { title } = Astro.props;
       <p class="mb-1 font-medium">
         © 2025 — <strong>Alexandre Demling & Gautier Vicat</strong>. Tous droits réservés.
       </p>
-      <p class="max-w-2xl mx-auto text-gray-600 italic">
-        <span class="block sm:inline">
-          Comment aider les acteurs locaux à réaliser un diagnostic de santé publique sur leur territoire ?
-        </span>
+      <p class="max-w-2xl mx-auto text-gray-600 italic mb-3">
+        Comment aider les acteurs locaux à réaliser un diagnostic de santé publique sur leur territoire ?
       </p>
+
+      <a
+        href="/sources"
+        class="inline-block bg-blue-700 text-white font-semibold px-5 py-2 rounded-xl shadow hover:bg-blue-600 transition"
+      >
+        Consulter les sources
+      </a>
     </footer>
+
 
     <!-- ✅ Sécurité : si Plot ou D3 n’est pas chargé, on recharge -->
     <script>

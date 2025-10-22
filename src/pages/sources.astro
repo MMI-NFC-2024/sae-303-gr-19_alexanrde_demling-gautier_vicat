@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Sources des données – Santé & Territoires">
+  <main class="bg-gray-50 py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <h1 class="text-4xl font-bold text-blue-700 mb-4">Sources des données</h1>
+      <p class="text-gray-700">
+        Données ouvertes utilisées pour la réalisation des cartes et analyses du projet
+        <strong>Santé & Territoires</strong>.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-6 text-left">
+      <section>
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2"> Données géographiques & hospitalières</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>
+            <a href="https://www.data.gouv.fr/datasets/localisation-des-hopitaux-dans-openstreetmap/"
+              class="text-blue-700 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer">
+              Localisation des hôpitaux dans OpenStreetMap — data.gouv.fr
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2"> Données de santé publique</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>
+            <a href="https://www.data.gouv.fr/datasets/sante-faire-le-pari-des-territoires-donnees-mobilisees"
+              class="text-blue-700 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer">
+              Santé — Faire le pari des territoires : données mobilisées
+            </a>
+          </li>
+          <li>
+            <a href="https://www.data.gouv.fr/datasets/laccessibilite-potentielle-localisee-apl/"
+              class="text-blue-700 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer">
+              L’Accessibilité Potentielle Localisée (APL)
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2"> Données socio-économiques et territoriales</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>
+            <a href="https://defis.data.gouv.fr/datasets/67e43007cd5e91b9fdcbc7b3"
+              class="text-blue-700 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer">
+              DEFI Santé Territoires – Données socio-sanitaires départementales
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="text-center mt-16">
+      <a
+        href="/analyses"
+        class="inline-block bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-blue-600 transition"
+      >
+         Retour à la conclusion
+      </a>
+    </div>
+  </main>
+</Layout>
