@@ -12,7 +12,9 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </div>
 
-    <div class="max-w-3xl mx-auto space-y-6 text-left">
+    <div class="max-w-3xl mx-auto space-y-10 text-left">
+
+      <!-- 🏥 Données hospitalières -->
       <section>
         <h2 class="text-2xl font-semibold text-blue-700 mb-2"> Données géographiques & hospitalières</h2>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
@@ -27,6 +29,7 @@ import Layout from "../layouts/Layout.astro";
         </ul>
       </section>
 
+      <!-- 📊 Données de santé publique -->
       <section>
         <h2 class="text-2xl font-semibold text-blue-700 mb-2"> Données de santé publique</h2>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
@@ -49,6 +52,22 @@ import Layout from "../layouts/Layout.astro";
         </ul>
       </section>
 
+      <!-- 📈 Données démographiques -->
+      <section>
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2"> Données démographiques et espérance de vie</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>
+            <a href="https://www.insee.fr/fr/statistiques/5039901?sommaire=5040030#tableau-figure2_radio1"
+              class="text-blue-700 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer">
+              INSEE — Espérance de vie à la naissance par département et par sexe
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 🌍 Données socio-économiques -->
       <section>
         <h2 class="text-2xl font-semibold text-blue-700 mb-2"> Données socio-économiques et territoriales</h2>
         <ul class="list-disc list-inside text-gray-700 space-y-1">
@@ -62,8 +81,10 @@ import Layout from "../layouts/Layout.astro";
           </li>
         </ul>
       </section>
+
     </div>
 
+    <!-- Retour -->
     <div class="text-center mt-16">
       <a
         href="/analyses"
