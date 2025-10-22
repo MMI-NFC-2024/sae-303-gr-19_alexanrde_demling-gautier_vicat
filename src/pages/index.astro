@@ -1,21 +1,37 @@
 ---
-import PlotFigure from "../components/PlotFigure.astro";
 import Layout from "../layouts/Layout.astro";
-import * as Plot from "@observablehq/plot";
-import penguins from "../assets/penguins.json";
+import MapMulti from "../components/MapMulti.astro";
 ---
 
-<Layout>
-  <h1 class="text-2xl">Test Astro et Plot (Observablehq)</h1>
-  <PlotFigure
-    options={{
-      marks: [
-        Plot.dot(penguins, {
-          x: "culmen_length_mm",
-          y: "culmen_depth_mm",
-          stroke: "species",
-        }),
-      ],
-    }}
-  />
+<Layout title="Accueil - Santé & Territoires">
+  <main class="bg-gray-50 min-h-screen py-12">
+    <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-6">
+      <div>
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+          Les inégalités sociales et territoriales influencent-elles
+          <span class="text-blue-600"> l’accès aux soins </span> en France ?
+        </h1>
+
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          Santé & Territoires : explorer les inégalités d’accès aux soins
+        </h2>
+
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Une carte interactive pour visualiser la pauvreté, l’accessibilité médicale et la vulnérabilité sanitaire en France.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed">
+          Cette carte illustre les inégalités d’accès aux soins en France à travers trois dimensions : 
+          <span class="font-semibold">l’accessibilité médicale (APL)</span>, 
+          <span class="font-semibold">la pauvreté</span> et 
+          <span class="font-semibold">la vulnérabilité sanitaire</span>. 
+          Elle permet d’identifier les territoires fragiles et d’appuyer les politiques publiques locales de santé.
+        </p>
+      </div>
+
+      <div class="shadow-lg rounded-xl overflow-hidden border border-gray-200">
+        <MapMulti />
+      </div>
+    </section>
+  </main>
 </Layout>

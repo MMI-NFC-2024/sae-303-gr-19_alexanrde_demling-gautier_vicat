@@ -1,0 +1,87 @@
+<div class="flex flex-col items-center justify-center w-full">
+  <h2 id="apl-title" class="text-2xl font-semibold mb-2 text-center"></h2>
+  <p id="apl-subtitle" class="text-gray-600 text-sm mb-4 text-center"></p>
+
+  <select
+    id="apl-selector"
+    class="border border-gray-300 rounded px-4 py-2 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
+  >
+    <option value="top">Top 20 meilleurs APL</option>
+    <option value="worst">Top 20 pires APL</option>
+  </select>
+
+  <div id="apl-plot" class="w-full max-w-5xl"></div>
+</div>
+
+<script client:load>
+  (async () => {
+    const selector = document.querySelector("#apl-selector");
+    const plotHost = document.querySelector("#apl-plot");
+    const title = document.querySelector("#apl-title");
+    const subtitle = document.querySelector("#apl-subtitle");
+
+    async function loadData(type) {
+      const url =
+        type === "top"
+          ? "/data/rankingAPL.json"
+          : "/data/unrankingAPL.json";
+      const res = await fetch(url);
+      const data = await res.json();
+
+      const dataset =
+        type === "top"
+          ? data
+              .slice(0, 20)
+              .sort((a, b) => b.APL_moyenne - a.APL_moyenne)
+          : data
+              .slice(0, 20)
+              .sort((a, b) => a.APL_moyenne - b.APL_moyenne);
+
+      const toColor = (v) =>
+        d3.interpolateRdYlGn(Math.max(0, Math.min(1, v / 6)));
+
+      const plot = Plot.plot({
+        width: 950,
+        height: 580,
+        marginLeft: 170,
+        marks: [
+          Plot.barX(dataset, {
+            x: "APL_moyenne",
+            y: "code_departement",
+            fill: (d) => toColor(d.APL_moyenne),
+            fillOpacity: 0.85,
+            title: (d) =>
+              `Département ${d.code_departement}\nAPL moyenne : ${d.APL_moyenne.toFixed(
+                2
+              )}`,
+          }),
+          Plot.text(dataset, {
+            x: (d) => d.APL_moyenne + 0.1,
+            y: "code_departement",
+            text: (d) => d.APL_moyenne.toFixed(1),
+            textAnchor: "start",
+            fill: "black",
+            fontSize: 11,
+          }),
+          Plot.ruleX([0]),
+        ],
+        x: { label: "Accessibilité potentielle localisée (APL)", grid: true },
+        y: { label: "Code du département", tickRotate: 0 },
+      });
+
+      plotHost.replaceChildren(plot);
+
+      title.textContent =
+        type === "top"
+          ? "Top 20 des départements les plus accessibles (APL moyenne)"
+          : "Top 20 des départements les moins accessibles (APL moyenne)";
+      subtitle.textContent =
+        type === "top"
+          ? "Les départements les mieux dotés en médecins généralistes (APL élevée)."
+          : "Les départements les plus en difficulté d'accès aux soins (APL faible).";
+    }
+
+    selector.addEventListener("change", (e) => loadData(e.target.value));
+    loadData("top");
+  })();
+</script>

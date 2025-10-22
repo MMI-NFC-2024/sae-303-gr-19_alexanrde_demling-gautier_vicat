@@ -1,0 +1,206 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MapAPL from "../components/MapAPL.astro";
+import MapAPLHopitaux from "../components/MapAPLHopitaux.astro";
+import MapPauvreteHopitaux from "../components/MapPauvreteHopitaux.astro";
+import VulnerabilityMap from "../components/VulnerabilityMap.astro";
+import CorrPauvreteChart from "../components/CorrPauvreteChart.astro";
+import CorrVieChart from "../components/CorrVieChart.astro";
+import Top20HospChart from "../components/Top20HospChart.astro";
+import TypologieChart from "../components/TypologieChart.astro";
+import ChartAPL from "../components/ChartAPL.astro";
+import PlotFigure from "../components/PlotFigure.astro";
+---
+
+<Layout title="Cartes & Graphiques – Santé & Territoires">
+  <main class="bg-gray-50 py-20 space-y-28">
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold text-blue-700 mb-3">Cartes & Analyses</h1>
+      <p class="text-gray-700 max-w-3xl mx-auto">
+        Exploration interactive de l’accessibilité médicale, des inégalités territoriales
+        et de la vulnérabilité socio-sanitaire en France métropolitaine.
+      </p>
+    </div>
+
+    <!-- 1️⃣ Accessibilité médicale (APL) -->
+    <section class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6">
+      <div class="order-2 lg:order-1">
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">Accessibilité médicale en France</h2>
+        <p class="text-gray-700 leading-relaxed text-justify">
+          La carte présente une vue d’ensemble de l’accessibilité médicale en France métropolitaine.
+          Plus la teinte est verte, plus l’accessibilité potentielle localisée (APL) est élevée —
+          c’est-à-dire qu’il est plus facile pour la population de consulter un médecin généraliste à proximité.
+          <br /><br />
+          Cette première carte pose le diagnostic spatial de l’offre de soins :
+          on repère immédiatement les zones rurales ou montagneuses (centre et sud du Massif Central, est de la France)
+          où les habitants sont moins bien desservis.
+          La France présente une forte fracture territoriale en matière d’accès aux soins de premier recours.
+        </p>
+      </div>
+      <div class="order-1 lg:order-2">
+        <MapAPL />
+      </div>
+    </section>
+
+    <!-- 2️⃣ APL + Hôpitaux -->
+    <section class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6">
+      <MapAPLHopitaux />
+      <div>
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">
+          Accessibilité médicale et offre hospitalière
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          Les couleurs représentent l’APL moyenne, les cercles indiquent le nombre d’établissements de santé par département.
+          Les grands pôles hospitaliers se concentrent dans les zones déjà bien pourvues,
+          ce qui accentue la polarisation des soins entre les centres urbains et les zones rurales.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3️⃣ Pauvreté & Hôpitaux -->
+    <section class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6">
+      <div>
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">Pauvreté et offre de soins</h2>
+        <p class="text-gray-700 leading-relaxed">
+          En fond : le taux de pauvreté (rouge = plus pauvre). En cercles : le nombre d’établissements de santé.
+          Les territoires les plus pauvres n’ont pas nécessairement plus d’établissements —
+          au contraire, beaucoup cumulent forte pauvreté et faible offre hospitalière.
+          Cette carte illustre le paradoxe social du système de santé : les besoins y sont les plus forts,
+          mais l’offre y est souvent la plus faible.
+        </p>
+      </div>
+      <MapPauvreteHopitaux />
+    </section>
+
+    <p class="text-red-600 font-medium mb-6">
+  Rafraîchissez la page pour voir les autres graphiques.
+</p>
+
+    <!-- 4️⃣ Corrélation Pauvreté -->
+    <section class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">
+        Corrélation pauvreté et accessibilité médicale
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8 text-justify">
+        Chaque point représente un département, avec une ligne de tendance rouge.
+        On observe une corrélation négative : plus la pauvreté augmente, plus l’accessibilité médicale diminue.
+        Les populations les plus précaires sont souvent aussi les plus éloignées des services de santé,
+        accentuant les inégalités sociales de santé.
+      </p>
+      <div class="flex justify-center">
+        <CorrPauvreteChart />
+      </div>
+    </section>
+
+    <!-- 5️⃣ Corrélation Espérance de Vie -->
+    <section class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">
+        Corrélation accessibilité médicale et espérance de vie
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8 text-justify">
+        Chaque point est un département.
+        L’axe X représente l’APL moyenne, l’axe Y l’espérance de vie à la naissance.
+        On observe une corrélation positive : un meilleur accès aux soins est globalement associé
+        à une espérance de vie plus élevée.
+        Ce graphique illustre directement l’impact des inégalités territoriales sur la santé publique.
+      </p>
+      <div class="flex justify-center">
+        <CorrVieChart />
+      </div>
+    </section>
+
+    <!-- 6️⃣ Top 20 établissements -->
+    <section class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">
+        Top 20 des départements les mieux dotés en établissements hospitaliers
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8 text-justify">
+        Classement des 20 départements avec le plus grand nombre d’établissements hospitaliers.
+        Ce graphique illustre la centralisation hospitalière dans les grandes régions urbaines
+        (Île-de-France, Rhône, Bouches-du-Rhône, Gironde…).
+        Les territoires périphériques sont structurellement sous-dotés.
+      </p>
+      <div class="flex justify-center">
+        <Top20HospChart />
+      </div>
+    </section>
+
+    <!-- 7️⃣ Analyse APL -->
+    <section class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">
+        Analyse des allocations APL
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8 text-justify">
+        Ces deux graphiques présentent les 20 départements les mieux classés et les 20 les moins bien classés selon leur APL moyenne.
+        Les moins accessibles se situent souvent dans des zones rurales isolées ou montagneuses (Creuse, Lozère, Haute-Loire, Cantal).
+        Les plus accessibles correspondent à des territoires urbains ou périurbains (Paris, Rhône, Gironde, Haute-Garonne).
+        Ces contrastes confirment que l’inégalité d’accès à la santé reste fortement territoriale.
+      </p>
+      <div class="flex justify-center">
+        <ChartAPL />
+      </div>
+    </section>
+
+    <!-- 8️⃣ Typologie Santé/Vulnérabilité -->
+    <section class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">
+        Typologie santé et vulnérabilité socio-économique
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8 text-justify">
+        Chaque point représente un département selon son accessibilité médicale (APL) et sa vulnérabilité socio-économique.
+        Les quadrants forment quatre profils :<br />
+        <strong class="text-green-700">Bien dotés & peu vulnérables</strong> : zones aisées et bien pourvues (Île-de-France, Rhône-Alpes).<br />
+        <strong class="text-orange-600">Bien dotés mais vulnérables</strong> : anciens bassins industriels ou zones urbaines fragiles.<br />
+        <strong class="text-blue-700">Peu dotés mais peu vulnérables</strong> : zones intermédiaires.<br />
+        <strong class="text-pink-600">Peu dotés et très vulnérables</strong> : territoires cumulant les difficultés (centre, sud, ouest rural).<br /><br />
+        Cette dataviz met en évidence les territoires à prioriser pour les politiques de santé publique.
+      </p>
+      <div class="flex justify-center">
+        <TypologieChart />
+      </div>
+    </section>
+
+    <!-- 9️⃣ Vulnérabilité Globale -->
+    <section class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-6">
+      <VulnerabilityMap />
+      <div>
+        <h2 class="text-3xl font-bold text-blue-700 mb-4">
+          Indice global de vulnérabilité
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          Cette carte combine pauvreté, chômage, part de personnes âgées et APL moyenne.
+          En rouge : territoires fragiles cumulant faiblesse médicale et précarité sociale.
+          En vert : départements résilients et bien pourvus.
+        </p>
+      </div>
+    </section>
+
+    <!-- 🔟 Conclusion -->
+    <section class="max-w-6xl mx-auto px-6 text-center pb-20">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">Conclusion & Analyse finale</h2>
+      <p class="text-gray-700 max-w-3xl mx-auto mb-8 text-justify">
+        L’ensemble des cartes et graphiques met en lumière la persistance d’inégalités fortes d’accès aux soins.
+        Le diagnostic spatial révèle une France à deux vitesses : les zones urbaines sont bien dotées,
+        tandis que les territoires ruraux ou isolés peinent à maintenir une offre médicale suffisante.
+        <br /><br />
+        Accédez à la page suivante pour une synthèse et une conclusion approfondie de ces constats.
+      </p>
+      <a
+        href="/analyses"
+        class="inline-block bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-blue-600 transition"
+      >
+        ➜ Accéder à la conclusion
+      </a>
+    </section>
+
+    <!-- 🔄 Rafraîchissement automatique après 4 secondes -->
+    <script>
+      if (!sessionStorage.getItem("cartes_refreshed")) {
+        sessionStorage.setItem("cartes_refreshed", "true");
+        setTimeout(() => {
+          window.location.reload();
+        }, 4000);
+      }
+    </script>
+  </main>
+</Layout>

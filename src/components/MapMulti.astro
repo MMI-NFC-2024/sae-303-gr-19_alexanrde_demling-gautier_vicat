@@ -1,0 +1,224 @@
+---
+import "leaflet/dist/leaflet.css";
+
+const franceUrl = "/data/france.geojson";
+const aplUrl = "/data/APLbyDept.json";
+const cleanIMUrl = "/data/cleanIM.json";
+const mapComparativeUrl = "/data/mapComparative.json";
+const hospByDeptUrl = "/data/hospByDept.json";
+---
+
+<div
+  id="map-container"
+  data-france-url={franceUrl}
+  data-apl-url={aplUrl}
+  data-cleanim-url={cleanIMUrl}
+  data-mapcomparative-url={mapComparativeUrl}
+  data-hospbydept-url={hospByDeptUrl}
+  style="text-align:center;"
+>
+  <h2 style="font-size:1.8em;font-weight:700;margin-top:10px;">
+    Santé et Territoires : explorer les inégalités d’accès aux soins
+  </h2>
+  <p style="color:#555;margin-bottom:18px;">
+    Une carte interactive pour visualiser la pauvreté, l’accessibilité médicale et la vulnérabilité sanitaire en France.
+  </p>
+  <div
+    id="map"
+    style="width:100%;max-width:1100px;height:720px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.15);margin:auto;"
+  ></div>
+</div>
+
+<script type="module">
+  import * as L from "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet-src.esm.js";
+  import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.8.5/+esm";
+
+  async function init() {
+    try {
+      const container = document.getElementById("map-container");
+
+      const franceUrl = container.dataset.franceUrl;
+      const aplUrl = container.dataset.aplUrl;
+      const cleanIMUrl = container.dataset.cleanimUrl;
+      const mapComparativeUrl = container.dataset.mapcomparativeUrl;
+      const hospByDeptUrl = container.dataset.hospbydeptUrl;
+
+      const [france, APLbyDept, cleanIM, mapComparative, hospByDept] =
+        await Promise.all([
+          fetch(franceUrl).then((r) => r.json()),
+          fetch(aplUrl).then((r) => r.json()),
+          fetch(cleanIMUrl).then((r) => r.json()),
+          fetch(mapComparativeUrl).then((r) => r.json()),
+          fetch(hospByDeptUrl).then((r) => r.json()),
+        ]);
+
+      const pad2 = (c) => String(c).padStart(2, "0");
+
+      const aplByCode = new Map(
+        APLbyDept.map((d) => [pad2(d.code_departement), d.APL_moyenne])
+      );
+      const povByCode = new Map(
+        cleanIM.map((d) => [pad2(d.code_departement), d.taux_pauvrete])
+      );
+      const vulnByCode = new Map(
+        mapComparative.map((d) => [pad2(d.code_departement), d.delta])
+      );
+      const hospByCode = new Map(
+        hospByDept.map((d) => [pad2(d.code_departement), d.total])
+      );
+
+      const aplDomain = [0, 6];
+      const povDomain = d3.extent(cleanIM, (d) => d.taux_pauvrete);
+      const vulnDomain = d3.extent(mapComparative, (d) => d.delta);
+
+      const colorAPL = d3.scaleSequential(d3.interpolateRdYlGn).domain(aplDomain);
+      const colorPov = d3.scaleSequential(d3.interpolateReds).domain(povDomain);
+      const colorVuln = d3
+        .scaleSequential(d3.interpolateRdBu)
+        .domain([vulnDomain[1], vulnDomain[0]]);
+      const rHosp = d3
+        .scaleSqrt()
+        .domain([0, d3.max(hospByDept, (d) => d.total)])
+        .range([0, 18]);
+
+      const map = L.map("map").setView([46.6, 2.5], 6);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      map.createPane("hospitals");
+      map.getPane("hospitals").style.zIndex = 650;
+
+      function makeLayer(getVal, colorScale) {
+        return L.geoJSON(france, {
+          style: (f) => ({
+            fillColor: colorScale(getVal(pad2(f.properties.code)) ?? NaN) || "#ccc",
+            color: "white",
+            weight: 0.8,
+            fillOpacity: 0.85,
+          }),
+          onEachFeature: (f, l) => {
+            const code = pad2(f.properties.code);
+            const apl = aplByCode.get(code);
+            const pov = povByCode.get(code);
+            const vuln = vulnByCode.get(code);
+            const hosp = hospByCode.get(code);
+            l.bindPopup(`
+              <b>${f.properties.nom}</b><br>
+              APL : ${apl?.toFixed(2) ?? "ND"}<br>
+              Pauvreté : ${pov?.toFixed(1) ?? "ND"} %<br>
+              Vulnérabilité : ${vuln?.toFixed(2) ?? "ND"}<br>
+              Hôpitaux : ${hosp ?? "ND"}
+            `);
+          },
+        });
+      }
+
+      const layerAPL = makeLayer((c) => aplByCode.get(c), colorAPL);
+      const layerPov = makeLayer((c) => povByCode.get(c), colorPov);
+      const layerVuln = makeLayer((c) => vulnByCode.get(c), colorVuln);
+
+      const layerHosp = L.layerGroup();
+      france.features.forEach((f) => {
+        const code = pad2(f.properties.code);
+        const h = hospByCode.get(code);
+        if (h) {
+          const center = L.geoJSON(f).getBounds().getCenter();
+          L.circleMarker(center, {
+            pane: "hospitals",
+            radius: rHosp(h),
+            color: "white",
+            weight: 1,
+            fillColor: "rgba(30,144,255,0.6)",
+            fillOpacity: 0.7,
+          })
+            .bindTooltip(
+              `${f.properties.nom}<br>${h} établissement${h > 1 ? "s" : ""}`,
+              { sticky: true }
+            )
+            .addTo(layerHosp);
+        }
+      });
+
+      const baseMaps = {
+        "APL moyenne (accessibilité médicale)": layerAPL,
+        "Taux de pauvreté": layerPov,
+        "Indice de vulnérabilité sanitaire": layerVuln,
+      };
+      const overlays = { "Établissements hospitaliers": layerHosp };
+
+      const control = L.control.layers(baseMaps, overlays, {
+        collapsed: false,
+        position: "topright",
+      }).addTo(map);
+
+      map.on("baselayerchange overlayadd", () => {
+        // ✅ Toujours forcer les cercles à rester devant
+        map.getPane("hospitals").style.zIndex = 650;
+      });
+
+      layerAPL.addTo(map);
+      layerHosp.addTo(map);
+
+      // ✅ Légende dynamique
+      const legend = L.control({ position: "bottomright" });
+      legend.onAdd = () => {
+        const div = L.DomUtil.create("div", "info legend");
+        div.style.background = "white";
+        div.style.padding = "8px";
+        div.style.borderRadius = "8px";
+        div.style.boxShadow = "0 1px 5px rgba(0,0,0,0.3)";
+        updateLegend(div, "APL");
+        return div;
+      };
+      legend.addTo(map);
+
+      function updateLegend(div, type) {
+        let grades, scale, title, note;
+        if (type === "APL") {
+          title = "APL moyenne (0 à 6)";
+          grades = d3.range(0, 6.1, 1);
+          scale = colorAPL;
+          note = "Vert = meilleure accessibilité";
+        } else if (type === "POV") {
+          title = "Taux de pauvreté (%)";
+          grades = d3.range(povDomain[0], povDomain[1] + 1, 2);
+          scale = colorPov;
+          note = "Rouge = pauvreté plus forte";
+        } else {
+          title = "Indice de vulnérabilité sanitaire";
+          grades = d3.range(vulnDomain[0], vulnDomain[1] + 0.1, 0.2);
+          scale = colorVuln;
+          note = "Rouge = plus vulnérable, bleu = moins vulnérable";
+        }
+        div.innerHTML = `<strong>${title}</strong><br>${grades
+          .map(
+            (v) =>
+              `<i style="background:${scale(
+                v
+              )};width:18px;height:18px;display:inline-block;margin-right:5px;"></i>${v.toFixed(
+                1
+              )}`
+          )
+          .join("<br>")}<br><small>${note}</small>`;
+      }
+
+      map.on("baselayerchange", (e) => {
+        if (e.name.includes("APL")) updateLegend(legend.getContainer(), "APL");
+        if (e.name.includes("pauvreté"))
+          updateLegend(legend.getContainer(), "POV");
+        if (e.name.includes("vulnérabilité"))
+          updateLegend(legend.getContainer(), "VULN");
+      });
+
+      setTimeout(() => {
+        map.invalidateSize();
+        map.getPane("hospitals").style.zIndex = 650;
+      }, 300);
+    } catch (err) {
+      console.error("Erreur carte multi :", err);
+    }
+  }
+
+  init();
+</script>

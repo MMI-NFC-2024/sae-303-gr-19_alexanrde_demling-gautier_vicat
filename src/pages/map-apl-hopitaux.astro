@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MapAPLHopitaux from "../components/MapAPLHopitaux.astro";
+---
+
+<Layout title="Carte APL & Hôpitaux">
+  <h1 class="text-3xl text-center mb-4 font-semibold">
+    Accessibilité médicale et densité hospitalière par département
+  </h1>
+  <p class="text-center text-gray-600 mb-6">
+    Visualisez la relation entre l’accessibilité aux médecins généralistes et le nombre d’établissements de santé.
+  </p>
+
+  <MapAPLHopitaux />
+</Layout>

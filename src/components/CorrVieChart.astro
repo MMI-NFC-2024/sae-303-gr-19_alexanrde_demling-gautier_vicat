@@ -1,0 +1,41 @@
+<div id="corr-vie" class="flex justify-center items-center w-full">
+  <div id="corr-vie-plot" class="max-w-[900px]"></div>
+</div>
+
+<script client:load>
+  (async () => {
+    const res = await fetch("/data/corrVie.json");
+    const data = await res.json();
+
+    const plot = Plot.plot({
+      title: "Lien entre accessibilité médicale et espérance de vie à la naissance",
+      subtitle:
+        "Un meilleur accès aux soins est souvent associé à une espérance de vie plus élevée.",
+      width: 850,
+      height: 520,
+      marks: [
+        Plot.dot(data, {
+          x: "APL",
+          y: "esperance_vie",
+          fill: "#009E73",
+          r: 5,
+          fillOpacity: 0.8,
+          title: (d) =>
+            `${d.nom_departement}\nAPL : ${d.APL.toFixed(
+              2
+            )}\nEspérance de vie : ${d.esperance_vie.toFixed(1)} ans`,
+        }),
+        Plot.linearRegressionY(data, {
+          x: "APL",
+          y: "esperance_vie",
+          stroke: "orange",
+          strokeWidth: 2,
+        }),
+      ],
+      x: { label: "Accessibilité médicale (APL moyenne)", grid: true },
+      y: { label: "Espérance de vie à la naissance (années)", grid: true },
+    });
+
+    document.getElementById("corr-vie-plot").replaceChildren(plot);
+  })();
+</script>

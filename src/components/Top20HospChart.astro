@@ -1,0 +1,42 @@
+<div class="flex flex-col items-center justify-center w-full">
+  <div id="top20-plot" class="max-w-[950px]"></div>
+</div>
+
+<script client:load>
+  (async () => {
+    try {
+      const res = await fetch("/data/top20Hosp.json");
+      const data = await res.json();
+
+      const plot = Plot.plot({
+        title: "Top 20 des départements par nombre d'établissements de santé",
+        width: 950,
+        height: 560,
+        marginLeft: 110,
+        marks: [
+          Plot.barX(data, {
+            x: "total",
+            y: "code_departement",
+            title: (d) =>
+              `Département ${d.code_departement}\n${d.total} établissements`,
+            fill: "#2f6fed",
+          }),
+          Plot.text(data, {
+            x: (d) => d.total + 0.3,
+            y: "code_departement",
+            text: (d) => d.total,
+            textAnchor: "start",
+            fontSize: 11,
+          }),
+          Plot.ruleX([0]),
+        ],
+        x: { label: "Nombre d'établissements", grid: true },
+        y: { label: "Département" },
+      });
+
+      document.getElementById("top20-plot").replaceChildren(plot);
+    } catch (err) {
+      console.error("Erreur lors du rendu du graphique :", err);
+    }
+  })();
+</script>

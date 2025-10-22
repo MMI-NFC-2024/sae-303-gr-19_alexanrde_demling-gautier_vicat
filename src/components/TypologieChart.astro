@@ -1,0 +1,43 @@
+<div class="flex flex-col items-center">
+  <div id="typologieChart" class="w-full max-w-5xl h-[600px]"></div>
+</div>
+
+<script client:load>
+  (async () => {
+    const res = await fetch("/data/typologie.json");
+    const data = await res.json();
+
+    const chart = Plot.plot({
+      title: "Typologie des départements selon APL et vulnérabilité socio-économique",
+      subtitle: "Une segmentation simple en 4 profils santé-territoires.",
+      width: 850,
+      height: 550,
+      marks: [
+        Plot.dot(data, {
+          x: "APL",
+          y: "socio",
+          fill: "profil",
+          r: 7,
+          title: (d) => `${d.nom_departement}\nProfil : ${d.profil}`,
+          fillOpacity: 0.85
+        }),
+        Plot.ruleX([0.5], { stroke: "#888", strokeWidth: 1, strokeDasharray: "4 4" }),
+        Plot.ruleY([0.5], { stroke: "#888", strokeWidth: 1, strokeDasharray: "4 4" })
+      ],
+      x: { label: "Accessibilité médicale normalisée (APL)", grid: true },
+      y: { label: "Vulnérabilité socio-économique normalisée", grid: true },
+      color: {
+        domain: [
+          "Bien dotés et peu vulnérables",
+          "Bien dotés mais vulnérables",
+          "Peu dotés mais peu vulnérables",
+          "Peu dotés et très vulnérables"
+        ],
+        range: ["#4CAF50", "#FF7043", "#5C6BC0", "#EC407A"],
+        legend: true
+      }
+    });
+
+    document.getElementById("typologieChart").append(chart);
+  })();
+</script>

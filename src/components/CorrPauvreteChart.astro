@@ -1,0 +1,33 @@
+<div class="flex flex-col items-center">
+  <div id="corrPauvreteChart" class="w-full max-w-5xl h-[600px]"></div>
+</div>
+
+<script client:load>
+  (async () => {
+    const res = await fetch("/data/corrPauvrete.json");
+    const data = await res.json();
+
+    const chart = Plot.plot({
+      title: "Corrélation entre l’accessibilité médicale (APL) et la pauvreté",
+      subtitle: "Chaque point représente un département français",
+      width: 850,
+      height: 550,
+      marks: [
+        Plot.dot(data, {
+          x: "APL",
+          y: "taux_pauvrete",
+          r: 5,
+          fill: "#1976d2",
+          fillOpacity: 0.8,
+          title: (d) =>
+            `${d.nom_departement}\nAPL moyenne : ${d.APL.toFixed(2)}\nTaux de pauvreté : ${d.taux_pauvrete}%`
+        }),
+        Plot.linearRegressionY(data, { x: "APL", y: "taux_pauvrete", stroke: "red" })
+      ],
+      x: { label: "Accessibilité potentielle localisée (APL moyenne)", grid: true },
+      y: { label: "Taux de pauvreté (%)", grid: true }
+    });
+
+    document.getElementById("corrPauvreteChart").append(chart);
+  })();
+</script>

@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Top20HospChart from "../components/Top20HospChart.astro";
+---
+
+<Layout title="Top 20 Établissements de Santé">
+  <main class="flex flex-col items-center p-6">
+    <h1 class="text-3xl font-semibold mb-4 text-center">
+      Top 20 des départements selon le nombre d’établissements de santé
+    </h1>
+    <Top20HospChart />
+  </main>
+</Layout>

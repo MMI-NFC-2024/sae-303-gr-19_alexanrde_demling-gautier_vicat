@@ -1,0 +1,78 @@
+---
+import "leaflet/dist/leaflet.css";
+---
+
+<div id="mapAPL" class="w-full max-w-6xl h-[700px] rounded-2xl shadow-lg mx-auto"></div>
+
+<script client:load>
+  const leafletScript = document.createElement("script");
+  leafletScript.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+  document.head.appendChild(leafletScript);
+
+  const d3Script = document.createElement("script");
+  d3Script.src = "https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js";
+  document.head.appendChild(d3Script);
+
+  Promise.all([
+    new Promise((res) => (leafletScript.onload = res)),
+    new Promise((res) => (d3Script.onload = res)),
+  ]).then(async () => {
+    try {
+      const res = await fetch("/data/APLmapData.json");
+      if (!res.ok) throw new Error("Impossible de charger le GeoJSON");
+      const APLmapData = await res.json();
+
+      const map = L.map("mapAPL", { center: [46.6, 2.5], zoom: 6 });
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      const colorScale = d3.scaleSequential(d3.interpolateRdYlGn).domain([0, 6]);
+
+      function style(feature) {
+        const val = feature.properties?.APL_moyenne ?? null;
+        return {
+          fillColor: val != null ? colorScale(val) : "#ccc",
+          color: "white",
+          weight: 1,
+          fillOpacity: 0.85,
+        };
+      }
+
+      function onEachFeature(feature, layer) {
+        const nom = feature.properties?.nom ?? "Inconnu";
+        const apl = feature.properties?.APL_moyenne;
+        layer.bindPopup(
+          apl != null
+            ? `<b>${nom}</b><br>APL moyenne : ${apl.toFixed(2)}`
+            : `<b>${nom}</b><br>Aucune donnée disponible`
+        );
+      }
+
+      L.geoJSON(APLmapData, { style, onEachFeature }).addTo(map);
+
+      // ✅ Légende claire
+      const legend = L.control({ position: "bottomright" });
+      legend.onAdd = function () {
+        const div = L.DomUtil.create("div", "info legend bg-white rounded-lg p-2 shadow-md text-sm");
+        const grades = d3.range(0, 6.1, 1);
+        div.innerHTML = `<strong>APL moyenne (0 à 6)</strong><br>`;
+        grades.forEach((v) => {
+          div.innerHTML += `<i style="background:${colorScale(
+            v
+          )};width:18px;height:18px;display:inline-block;margin-right:5px;"></i>${v.toFixed(1)}<br>`;
+        });
+        div.innerHTML += `<small>Vert = meilleure accessibilité</small>`;
+        return div;
+      };
+      legend.addTo(map);
+
+      setTimeout(() => map.invalidateSize(), 400);
+    } catch (err) {
+      console.error("Erreur de chargement :", err);
+      document.getElementById("mapAPL").innerHTML =
+        "<p style='color:red;text-align:center;margin-top:40px;'>Erreur de chargement de la carte.</p>";
+    }
+  });
+</script>

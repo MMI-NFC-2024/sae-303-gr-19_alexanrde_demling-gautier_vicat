@@ -1,0 +1,487 @@
+[
+    {
+        "rang": 1,
+        "code_departement": "18",
+        "APL_moyenne": 1.9092094240837694
+    },
+    {
+        "rang": 2,
+        "code_departement": "2B",
+        "APL_moyenne": 1.9401949152542384
+    },
+    {
+        "rang": 3,
+        "code_departement": "45",
+        "APL_moyenne": 1.9414184615384622
+    },
+    {
+        "rang": 4,
+        "code_departement": "77",
+        "APL_moyenne": 2.161501972386588
+    },
+    {
+        "rang": 5,
+        "code_departement": "48",
+        "APL_moyenne": 2.21260197368421
+    },
+    {
+        "rang": 6,
+        "code_departement": "28",
+        "APL_moyenne": 2.251431506849315
+    },
+    {
+        "rang": 7,
+        "code_departement": "58",
+        "APL_moyenne": 2.3141618122977343
+    },
+    {
+        "rang": 8,
+        "code_departement": "41",
+        "APL_moyenne": 2.328764044943817
+    },
+    {
+        "rang": 9,
+        "code_departement": "01",
+        "APL_moyenne": 2.3609630102040837
+    },
+    {
+        "rang": 10,
+        "code_departement": "36",
+        "APL_moyenne": 2.4034937759336126
+    },
+    {
+        "rang": 11,
+        "code_departement": "07",
+        "APL_moyenne": 2.4052686567164168
+    },
+    {
+        "rang": 12,
+        "code_departement": "89",
+        "APL_moyenne": 2.4072884160756503
+    },
+    {
+        "rang": 13,
+        "code_departement": "78",
+        "APL_moyenne": 2.416046332046337
+    },
+    {
+        "rang": 14,
+        "code_departement": "71",
+        "APL_moyenne": 2.4225992907801404
+    },
+    {
+        "rang": 15,
+        "code_departement": "95",
+        "APL_moyenne": 2.433171662125342
+    },
+    {
+        "rang": 16,
+        "code_departement": "27",
+        "APL_moyenne": 2.4538888888888817
+    },
+    {
+        "rang": 17,
+        "code_departement": "10",
+        "APL_moyenne": 2.487718097447801
+    },
+    {
+        "rang": 18,
+        "code_departement": "91",
+        "APL_moyenne": 2.4975386597938143
+    },
+    {
+        "rang": 19,
+        "code_departement": "53",
+        "APL_moyenne": 2.5068624999999995
+    },
+    {
+        "rang": 20,
+        "code_departement": "11",
+        "APL_moyenne": 2.522700923787529
+    },
+    {
+        "rang": 21,
+        "code_departement": "72",
+        "APL_moyenne": 2.5238516949152583
+    },
+    {
+        "rang": 22,
+        "code_departement": "47",
+        "APL_moyenne": 2.5691269592476513
+    },
+    {
+        "rang": 23,
+        "code_departement": "52",
+        "APL_moyenne": 2.5754248826291115
+    },
+    {
+        "rang": 24,
+        "code_departement": "43",
+        "APL_moyenne": 2.587303501945524
+    },
+    {
+        "rang": 25,
+        "code_departement": "04",
+        "APL_moyenne": 2.5965505050505038
+    },
+    {
+        "rang": 26,
+        "code_departement": "2A",
+        "APL_moyenne": 2.6270483870967754
+    },
+    {
+        "rang": 27,
+        "code_departement": "46",
+        "APL_moyenne": 2.630495207667731
+    },
+    {
+        "rang": 28,
+        "code_departement": "85",
+        "APL_moyenne": 2.6546960784313725
+    },
+    {
+        "rang": 29,
+        "code_departement": "03",
+        "APL_moyenne": 2.666755520504732
+    },
+    {
+        "rang": 30,
+        "code_departement": "23",
+        "APL_moyenne": 2.6799550781250017
+    },
+    {
+        "rang": 31,
+        "code_departement": "79",
+        "APL_moyenne": 2.698439453125001
+    },
+    {
+        "rang": 32,
+        "code_departement": "24",
+        "APL_moyenne": 2.7088916500994027
+    },
+    {
+        "rang": 33,
+        "code_departement": "42",
+        "APL_moyenne": 2.7186842105263165
+    },
+    {
+        "rang": 34,
+        "code_departement": "61",
+        "APL_moyenne": 2.7215740259740255
+    },
+    {
+        "rang": 35,
+        "code_departement": "60",
+        "APL_moyenne": 2.737753495217072
+    },
+    {
+        "rang": 36,
+        "code_departement": "09",
+        "APL_moyenne": 2.748150306748464
+    },
+    {
+        "rang": 37,
+        "code_departement": "02",
+        "APL_moyenne": 2.7538439849624043
+    },
+    {
+        "rang": 38,
+        "code_departement": "12",
+        "APL_moyenne": 2.7545736842105266
+    },
+    {
+        "rang": 39,
+        "code_departement": "26",
+        "APL_moyenne": 2.7727575757575726
+    },
+    {
+        "rang": 40,
+        "code_departement": "50",
+        "APL_moyenne": 2.783806741573038
+    },
+    {
+        "rang": 41,
+        "code_departement": "06",
+        "APL_moyenne": 2.8044417177914127
+    },
+    {
+        "rang": 42,
+        "code_departement": "15",
+        "APL_moyenne": 2.817390243902438
+    },
+    {
+        "rang": 43,
+        "code_departement": "19",
+        "APL_moyenne": 2.8426738351254497
+    },
+    {
+        "rang": 44,
+        "code_departement": "81",
+        "APL_moyenne": 2.8599458598726133
+    },
+    {
+        "rang": 45,
+        "code_departement": "16",
+        "APL_moyenne": 2.8886662068965503
+    },
+    {
+        "rang": 46,
+        "code_departement": "51",
+        "APL_moyenne": 2.9091055646481205
+    },
+    {
+        "rang": 47,
+        "code_departement": "82",
+        "APL_moyenne": 2.9283179487179476
+    },
+    {
+        "rang": 48,
+        "code_departement": "21",
+        "APL_moyenne": 2.9429104584527246
+    },
+    {
+        "rang": 49,
+        "code_departement": "22",
+        "APL_moyenne": 2.950377873563217
+    },
+    {
+        "rang": 50,
+        "code_departement": "97",
+        "APL_moyenne": 2.9548705357142855
+    },
+    {
+        "rang": 51,
+        "code_departement": "38",
+        "APL_moyenne": 2.9790878906250042
+    },
+    {
+        "rang": 52,
+        "code_departement": "68",
+        "APL_moyenne": 3.000930327868851
+    },
+    {
+        "rang": 53,
+        "code_departement": "74",
+        "APL_moyenne": 3.015732974910392
+    },
+    {
+        "rang": 54,
+        "code_departement": "87",
+        "APL_moyenne": 3.0242179487179484
+    },
+    {
+        "rang": 55,
+        "code_departement": "55",
+        "APL_moyenne": 3.027831643002025
+    },
+    {
+        "rang": 56,
+        "code_departement": "63",
+        "APL_moyenne": 3.0329515086206893
+    },
+    {
+        "rang": 57,
+        "code_departement": "66",
+        "APL_moyenne": 3.0491880530973434
+    },
+    {
+        "rang": 58,
+        "code_departement": "92",
+        "APL_moyenne": 3.059472222222224
+    },
+    {
+        "rang": 59,
+        "code_departement": "30",
+        "APL_moyenne": 3.0852065527065498
+    },
+    {
+        "rang": 60,
+        "code_departement": "84",
+        "APL_moyenne": 3.0931688741721866
+    },
+    {
+        "rang": 61,
+        "code_departement": "83",
+        "APL_moyenne": 3.096823529411766
+    },
+    {
+        "rang": 62,
+        "code_departement": "54",
+        "APL_moyenne": 3.108318950930628
+    },
+    {
+        "rang": 63,
+        "code_departement": "88",
+        "APL_moyenne": 3.1117790927021733
+    },
+    {
+        "rang": 64,
+        "code_departement": "57",
+        "APL_moyenne": 3.1303655172413785
+    },
+    {
+        "rang": 65,
+        "code_departement": "39",
+        "APL_moyenne": 3.1749807692307677
+    },
+    {
+        "rang": 66,
+        "code_departement": "93",
+        "APL_moyenne": 3.178375000000001
+    },
+    {
+        "rang": 67,
+        "code_departement": "44",
+        "APL_moyenne": 3.1881135265700475
+    },
+    {
+        "rang": 68,
+        "code_departement": "69",
+        "APL_moyenne": 3.1884171220400717
+    },
+    {
+        "rang": 69,
+        "code_departement": "32",
+        "APL_moyenne": 3.189270065075919
+    },
+    {
+        "rang": 70,
+        "code_departement": "70",
+        "APL_moyenne": 3.2292634508348823
+    },
+    {
+        "rang": 71,
+        "code_departement": "65",
+        "APL_moyenne": 3.2565405117270796
+    },
+    {
+        "rang": 72,
+        "code_departement": "34",
+        "APL_moyenne": 3.2782163742690047
+    },
+    {
+        "rang": 73,
+        "code_departement": "73",
+        "APL_moyenne": 3.281954212454214
+    },
+    {
+        "rang": 74,
+        "code_departement": "08",
+        "APL_moyenne": 3.2899609810479395
+    },
+    {
+        "rang": 75,
+        "code_departement": "31",
+        "APL_moyenne": 3.2948805460750887
+    },
+    {
+        "rang": 76,
+        "code_departement": "35",
+        "APL_moyenne": 3.3147924812030056
+    },
+    {
+        "rang": 77,
+        "code_departement": "86",
+        "APL_moyenne": 3.318715630885126
+    },
+    {
+        "rang": 78,
+        "code_departement": "90",
+        "APL_moyenne": 3.338039603960398
+    },
+    {
+        "rang": 79,
+        "code_departement": "49",
+        "APL_moyenne": 3.3770821529745025
+    },
+    {
+        "rang": 80,
+        "code_departement": "64",
+        "APL_moyenne": 3.3871420714940443
+    },
+    {
+        "rang": 81,
+        "code_departement": "37",
+        "APL_moyenne": 3.3940441176470557
+    },
+    {
+        "rang": 82,
+        "code_departement": "25",
+        "APL_moyenne": 3.3983245614035122
+    },
+    {
+        "rang": 83,
+        "code_departement": "76",
+        "APL_moyenne": 3.412604519774009
+    },
+    {
+        "rang": 84,
+        "code_departement": "17",
+        "APL_moyenne": 3.4305593952483777
+    },
+    {
+        "rang": 85,
+        "code_departement": "14",
+        "APL_moyenne": 3.4597935606060686
+    },
+    {
+        "rang": 86,
+        "code_departement": "56",
+        "APL_moyenne": 3.4666144578313225
+    },
+    {
+        "rang": 87,
+        "code_departement": "62",
+        "APL_moyenne": 3.4987000000000004
+    },
+    {
+        "rang": 88,
+        "code_departement": "40",
+        "APL_moyenne": 3.5601896024464796
+    },
+    {
+        "rang": 89,
+        "code_departement": "94",
+        "APL_moyenne": 3.566106382978722
+    },
+    {
+        "rang": 90,
+        "code_departement": "80",
+        "APL_moyenne": 3.705968911917094
+    },
+    {
+        "rang": 91,
+        "code_departement": "29",
+        "APL_moyenne": 3.7610342960288805
+    },
+    {
+        "rang": 92,
+        "code_departement": "33",
+        "APL_moyenne": 3.811852336448595
+    },
+    {
+        "rang": 93,
+        "code_departement": "67",
+        "APL_moyenne": 3.9498326848249006
+    },
+    {
+        "rang": 94,
+        "code_departement": "59",
+        "APL_moyenne": 3.953094907407409
+    },
+    {
+        "rang": 95,
+        "code_departement": "13",
+        "APL_moyenne": 4.188432835820892
+    },
+    {
+        "rang": 96,
+        "code_departement": "05",
+        "APL_moyenne": 4.239824074074075
+    },
+    {
+        "rang": 97,
+        "code_departement": "75",
+        "APL_moyenne": 5.261149999999999
+    }
+]

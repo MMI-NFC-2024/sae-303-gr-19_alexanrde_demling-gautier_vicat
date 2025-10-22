@@ -1,0 +1,578 @@
+[
+    {
+        "code_departement": "01",
+        "nom_departement": "Ain",
+        "APL": 2.3609630102040837,
+        "esperance_vie": 83.5
+    },
+    {
+        "code_departement": "02",
+        "nom_departement": "Aisne",
+        "APL": 2.7538439849624043,
+        "esperance_vie": 80.2
+    },
+    {
+        "code_departement": "03",
+        "nom_departement": "Allier",
+        "APL": 2.666755520504732,
+        "esperance_vie": 81.3
+    },
+    {
+        "code_departement": "04",
+        "nom_departement": "Alpes-de-Haute-Provence",
+        "APL": 2.5965505050505038,
+        "esperance_vie": 82.2
+    },
+    {
+        "code_departement": "05",
+        "nom_departement": "Hautes-Alpes",
+        "APL": 4.239824074074075,
+        "esperance_vie": 83.4
+    },
+    {
+        "code_departement": "06",
+        "nom_departement": "Alpes-Maritimes",
+        "APL": 2.8044417177914127,
+        "esperance_vie": 83.3
+    },
+    {
+        "code_departement": "07",
+        "nom_departement": "Ardèche",
+        "APL": 2.4052686567164168,
+        "esperance_vie": 82.7
+    },
+    {
+        "code_departement": "08",
+        "nom_departement": "Ardennes",
+        "APL": 3.2899609810479395,
+        "esperance_vie": 80.8
+    },
+    {
+        "code_departement": "09",
+        "nom_departement": "Ariège",
+        "APL": 2.748150306748464,
+        "esperance_vie": 81.9
+    },
+    {
+        "code_departement": "10",
+        "nom_departement": "Aube",
+        "APL": 2.487718097447801,
+        "esperance_vie": 81.2
+    },
+    {
+        "code_departement": "11",
+        "nom_departement": "Aude",
+        "APL": 2.522700923787529,
+        "esperance_vie": 82.4
+    },
+    {
+        "code_departement": "12",
+        "nom_departement": "Aveyron",
+        "APL": 2.7545736842105266,
+        "esperance_vie": 83.1
+    },
+    {
+        "code_departement": "13",
+        "nom_departement": "Bouches-du-Rhône",
+        "APL": 4.188432835820892,
+        "esperance_vie": 83
+    },
+    {
+        "code_departement": "14",
+        "nom_departement": "Calvados",
+        "APL": 3.4597935606060686,
+        "esperance_vie": 81.9
+    },
+    {
+        "code_departement": "15",
+        "nom_departement": "Cantal",
+        "APL": 2.817390243902438,
+        "esperance_vie": 81.4
+    },
+    {
+        "code_departement": "16",
+        "nom_departement": "Charente",
+        "APL": 2.8886662068965503,
+        "esperance_vie": 82
+    },
+    {
+        "code_departement": "17",
+        "nom_departement": "Charente-Maritime",
+        "APL": 3.4305593952483777,
+        "esperance_vie": 82.3
+    },
+    {
+        "code_departement": "18",
+        "nom_departement": "Cher",
+        "APL": 1.9092094240837694,
+        "esperance_vie": 80.7
+    },
+    {
+        "code_departement": "19",
+        "nom_departement": "Corrèze",
+        "APL": 2.8426738351254497,
+        "esperance_vie": 81.9
+    },
+    {
+        "code_departement": "21",
+        "nom_departement": "Côte-d'Or",
+        "APL": 2.9429104584527246,
+        "esperance_vie": 83
+    },
+    {
+        "code_departement": "22",
+        "nom_departement": "Côtes-d'Armor",
+        "APL": 2.950377873563217,
+        "esperance_vie": 81.4
+    },
+    {
+        "code_departement": "23",
+        "nom_departement": "Creuse",
+        "APL": 2.6799550781250017,
+        "esperance_vie": 81.3
+    },
+    {
+        "code_departement": "24",
+        "nom_departement": "Dordogne",
+        "APL": 2.7088916500994027,
+        "esperance_vie": 82.3
+    },
+    {
+        "code_departement": "25",
+        "nom_departement": "Doubs",
+        "APL": 3.3983245614035122,
+        "esperance_vie": 82.5
+    },
+    {
+        "code_departement": "26",
+        "nom_departement": "Drôme",
+        "APL": 2.7727575757575726,
+        "esperance_vie": 82.7
+    },
+    {
+        "code_departement": "27",
+        "nom_departement": "Eure",
+        "APL": 2.4538888888888817,
+        "esperance_vie": 81.5
+    },
+    {
+        "code_departement": "28",
+        "nom_departement": "Eure-et-Loir",
+        "APL": 2.251431506849315,
+        "esperance_vie": 82.2
+    },
+    {
+        "code_departement": "29",
+        "nom_departement": "Finistère",
+        "APL": 3.7610342960288805,
+        "esperance_vie": 81.6
+    },
+    {
+        "code_departement": "2A",
+        "nom_departement": "Corse-du-Sud",
+        "APL": 2.6270483870967754,
+        "esperance_vie": 83.7
+    },
+    {
+        "code_departement": "2B",
+        "nom_departement": "Haute-Corse",
+        "APL": 1.9401949152542384,
+        "esperance_vie": 83.4
+    },
+    {
+        "code_departement": "30",
+        "nom_departement": "Gard",
+        "APL": 3.0852065527065498,
+        "esperance_vie": 82.6
+    },
+    {
+        "code_departement": "31",
+        "nom_departement": "Haute-Garonne",
+        "APL": 3.2948805460750887,
+        "esperance_vie": 83.8
+    },
+    {
+        "code_departement": "32",
+        "nom_departement": "Gers",
+        "APL": 3.189270065075919,
+        "esperance_vie": 82.6
+    },
+    {
+        "code_departement": "33",
+        "nom_departement": "Gironde",
+        "APL": 3.811852336448595,
+        "esperance_vie": 83.2
+    },
+    {
+        "code_departement": "34",
+        "nom_departement": "Hérault",
+        "APL": 3.2782163742690047,
+        "esperance_vie": 82.9
+    },
+    {
+        "code_departement": "35",
+        "nom_departement": "Ille-et-Vilaine",
+        "APL": 3.3147924812030056,
+        "esperance_vie": 83.2
+    },
+    {
+        "code_departement": "36",
+        "nom_departement": "Indre",
+        "APL": 2.4034937759336126,
+        "esperance_vie": 81.4
+    },
+    {
+        "code_departement": "37",
+        "nom_departement": "Indre-et-Loire",
+        "APL": 3.3940441176470557,
+        "esperance_vie": 83.2
+    },
+    {
+        "code_departement": "38",
+        "nom_departement": "Isère",
+        "APL": 2.9790878906250042,
+        "esperance_vie": 83.6
+    },
+    {
+        "code_departement": "39",
+        "nom_departement": "Jura",
+        "APL": 3.1749807692307677,
+        "esperance_vie": 82.6
+    },
+    {
+        "code_departement": "40",
+        "nom_departement": "Landes",
+        "APL": 3.5601896024464796,
+        "esperance_vie": 82.7
+    },
+    {
+        "code_departement": "41",
+        "nom_departement": "Loir-et-Cher",
+        "APL": 2.328764044943817,
+        "esperance_vie": 82.2
+    },
+    {
+        "code_departement": "42",
+        "nom_departement": "Loire",
+        "APL": 2.7186842105263165,
+        "esperance_vie": 83
+    },
+    {
+        "code_departement": "43",
+        "nom_departement": "Haute-Loire",
+        "APL": 2.587303501945524,
+        "esperance_vie": 82.5
+    },
+    {
+        "code_departement": "44",
+        "nom_departement": "Loire-Atlantique",
+        "APL": 3.1881135265700475,
+        "esperance_vie": 82.7
+    },
+    {
+        "code_departement": "45",
+        "nom_departement": "Loiret",
+        "APL": 1.9414184615384622,
+        "esperance_vie": 82.7
+    },
+    {
+        "code_departement": "46",
+        "nom_departement": "Lot",
+        "APL": 2.630495207667731,
+        "esperance_vie": 82.4
+    },
+    {
+        "code_departement": "47",
+        "nom_departement": "Lot-et-Garonne",
+        "APL": 2.5691269592476513,
+        "esperance_vie": 82.4
+    },
+    {
+        "code_departement": "48",
+        "nom_departement": "Lozère",
+        "APL": 2.21260197368421,
+        "esperance_vie": 82
+    },
+    {
+        "code_departement": "49",
+        "nom_departement": "Maine-et-Loire",
+        "APL": 3.3770821529745025,
+        "esperance_vie": 83.9
+    },
+    {
+        "code_departement": "50",
+        "nom_departement": "Manche",
+        "APL": 2.783806741573038,
+        "esperance_vie": 82.2
+    },
+    {
+        "code_departement": "51",
+        "nom_departement": "Marne",
+        "APL": 2.9091055646481205,
+        "esperance_vie": 81.9
+    },
+    {
+        "code_departement": "52",
+        "nom_departement": "Haute-Marne",
+        "APL": 2.5754248826291115,
+        "esperance_vie": 80.9
+    },
+    {
+        "code_departement": "53",
+        "nom_departement": "Mayenne",
+        "APL": 2.5068624999999995,
+        "esperance_vie": 83
+    },
+    {
+        "code_departement": "54",
+        "nom_departement": "Meurthe-et-Moselle",
+        "APL": 3.108318950930628,
+        "esperance_vie": 82.3
+    },
+    {
+        "code_departement": "55",
+        "nom_departement": "Meuse",
+        "APL": 3.027831643002025,
+        "esperance_vie": 81.1
+    },
+    {
+        "code_departement": "56",
+        "nom_departement": "Morbihan",
+        "APL": 3.4666144578313225,
+        "esperance_vie": 81.8
+    },
+    {
+        "code_departement": "57",
+        "nom_departement": "Moselle",
+        "APL": 3.1303655172413785,
+        "esperance_vie": 81.5
+    },
+    {
+        "code_departement": "58",
+        "nom_departement": "Nièvre",
+        "APL": 2.3141618122977343,
+        "esperance_vie": 80.6
+    },
+    {
+        "code_departement": "59",
+        "nom_departement": "Nord",
+        "APL": 3.953094907407409,
+        "esperance_vie": 80.8
+    },
+    {
+        "code_departement": "60",
+        "nom_departement": "Oise",
+        "APL": 2.737753495217072,
+        "esperance_vie": 81.7
+    },
+    {
+        "code_departement": "61",
+        "nom_departement": "Orne",
+        "APL": 2.7215740259740255,
+        "esperance_vie": 81.6
+    },
+    {
+        "code_departement": "62",
+        "nom_departement": "Pas-de-Calais",
+        "APL": 3.4987000000000004,
+        "esperance_vie": 80.3
+    },
+    {
+        "code_departement": "63",
+        "nom_departement": "Puy-de-Dôme",
+        "APL": 3.0329515086206893,
+        "esperance_vie": 82.5
+    },
+    {
+        "code_departement": "64",
+        "nom_departement": "Pyrénées-Atlantiques",
+        "APL": 3.3871420714940443,
+        "esperance_vie": 83.5
+    },
+    {
+        "code_departement": "65",
+        "nom_departement": "Hautes-Pyrénées",
+        "APL": 3.2565405117270796,
+        "esperance_vie": 82.4
+    },
+    {
+        "code_departement": "66",
+        "nom_departement": "Pyrénées-Orientales",
+        "APL": 3.0491880530973434,
+        "esperance_vie": 82
+    },
+    {
+        "code_departement": "67",
+        "nom_departement": "Bas-Rhin",
+        "APL": 3.9498326848249006,
+        "esperance_vie": 82.6
+    },
+    {
+        "code_departement": "68",
+        "nom_departement": "Haut-Rhin",
+        "APL": 3.000930327868851,
+        "esperance_vie": 82.5
+    },
+    {
+        "code_departement": "69",
+        "nom_departement": "Rhône",
+        "APL": 3.1884171220400717,
+        "esperance_vie": 84.1
+    },
+    {
+        "code_departement": "70",
+        "nom_departement": "Haute-Saône",
+        "APL": 3.2292634508348823,
+        "esperance_vie": 81.6
+    },
+    {
+        "code_departement": "71",
+        "nom_departement": "Saône-et-Loire",
+        "APL": 2.4225992907801404,
+        "esperance_vie": 82.1
+    },
+    {
+        "code_departement": "72",
+        "nom_departement": "Sarthe",
+        "APL": 2.5238516949152583,
+        "esperance_vie": 82.4
+    },
+    {
+        "code_departement": "73",
+        "nom_departement": "Savoie",
+        "APL": 3.281954212454214,
+        "esperance_vie": 83.6
+    },
+    {
+        "code_departement": "74",
+        "nom_departement": "Haute-Savoie",
+        "APL": 3.015732974910392,
+        "esperance_vie": 83.9
+    },
+    {
+        "code_departement": "75",
+        "nom_departement": "Paris",
+        "APL": 5.261149999999999,
+        "esperance_vie": 84.6
+    },
+    {
+        "code_departement": "76",
+        "nom_departement": "Seine-Maritime",
+        "APL": 3.412604519774009,
+        "esperance_vie": 81.5
+    },
+    {
+        "code_departement": "77",
+        "nom_departement": "Seine-et-Marne",
+        "APL": 2.161501972386588,
+        "esperance_vie": 83
+    },
+    {
+        "code_departement": "78",
+        "nom_departement": "Yvelines",
+        "APL": 2.416046332046337,
+        "esperance_vie": 84.3
+    },
+    {
+        "code_departement": "79",
+        "nom_departement": "Deux-Sèvres",
+        "APL": 2.698439453125001,
+        "esperance_vie": 82.8
+    },
+    {
+        "code_departement": "80",
+        "nom_departement": "Somme",
+        "APL": 3.705968911917094,
+        "esperance_vie": 80.6
+    },
+    {
+        "code_departement": "81",
+        "nom_departement": "Tarn",
+        "APL": 2.8599458598726133,
+        "esperance_vie": 82.9
+    },
+    {
+        "code_departement": "82",
+        "nom_departement": "Tarn-et-Garonne",
+        "APL": 2.9283179487179476,
+        "esperance_vie": 82.7
+    },
+    {
+        "code_departement": "83",
+        "nom_departement": "Var",
+        "APL": 3.096823529411766,
+        "esperance_vie": 82.7
+    },
+    {
+        "code_departement": "84",
+        "nom_departement": "Vaucluse",
+        "APL": 3.0931688741721866,
+        "esperance_vie": 82.3
+    },
+    {
+        "code_departement": "85",
+        "nom_departement": "Vendée",
+        "APL": 2.6546960784313725,
+        "esperance_vie": 82.6
+    },
+    {
+        "code_departement": "86",
+        "nom_departement": "Vienne",
+        "APL": 3.318715630885126,
+        "esperance_vie": 82.8
+    },
+    {
+        "code_departement": "87",
+        "nom_departement": "Haute-Vienne",
+        "APL": 3.0242179487179484,
+        "esperance_vie": 82.4
+    },
+    {
+        "code_departement": "88",
+        "nom_departement": "Vosges",
+        "APL": 3.1117790927021733,
+        "esperance_vie": 81.3
+    },
+    {
+        "code_departement": "89",
+        "nom_departement": "Yonne",
+        "APL": 2.4072884160756503,
+        "esperance_vie": 80.8
+    },
+    {
+        "code_departement": "90",
+        "nom_departement": "Territoire-de-Belfort",
+        "APL": 3.338039603960398,
+        "esperance_vie": 81.3
+    },
+    {
+        "code_departement": "91",
+        "nom_departement": "Essonne",
+        "APL": 2.4975386597938143,
+        "esperance_vie": 83.9
+    },
+    {
+        "code_departement": "92",
+        "nom_departement": "Hauts-de-Seine",
+        "APL": 3.059472222222224,
+        "esperance_vie": 84.6
+    },
+    {
+        "code_departement": "93",
+        "nom_departement": "Seine-Saint-Denis",
+        "APL": 3.178375000000001,
+        "esperance_vie": 82.4
+    },
+    {
+        "code_departement": "94",
+        "nom_departement": "Val-de-Marne",
+        "APL": 3.566106382978722,
+        "esperance_vie": 83.9
+    },
+    {
+        "code_departement": "95",
+        "nom_departement": "Val-d'Oise",
+        "APL": 2.433171662125342,
+        "esperance_vie": 83
+    }
+]
