@@ -2,71 +2,118 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Analyses - Santé & Territoires">
+<Layout title="Conclusion — Santé & Territoires">
   <main class="bg-gray-50 py-16 px-6">
-    <section class="max-w-4xl mx-auto">
-      <h1 class="text-4xl font-extrabold text-gray-900 mb-8">
-        Conclusion générale — Diagnostic territorial de santé publique en France
+    <!-- En-tête -->
+    <header class="max-w-5xl mx-auto text-center mb-12">
+      <h1 class="text-4xl font-bold text-blue-700 mb-4">
+        Conclusion générale - Les inégalités sociales et territoriales influencent-elles l’accès aux soins en France ?
       </h1>
+      <p class="text-gray-700 max-w-3xl mx-auto">
+        Synthèse des visualisations, interprétation des corrélations et mise en perspective
+        des inégalités territoriales d’accès aux soins.
+      </p>
+    </header>
 
-      <div class="space-y-6 text-gray-700 leading-relaxed text-lg">
+    <!-- Corps de l'analyse -->
+    <article class="prose prose-lg max-w-4xl mx-auto prose-headings:text-blue-700 prose-p:text-gray-800">
+      <section class="mb-12">
         <p>
           L’ensemble des visualisations présentées met en évidence les fortes disparités territoriales en matière d’accès
           aux soins et de vulnérabilité socio-économique. En croisant les données de l’accessibilité potentielle
           localisée (APL), du taux de pauvreté, du chômage, de la démographie et de la répartition des établissements
           hospitaliers, plusieurs constats se dégagent.
         </p>
+      </section>
 
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold">Choix graphiques et éditoriaux</h2>
         <p>
-          D’abord, les cartes d’APL moyenne montrent que l’accès aux médecins généralistes est loin d’être homogène. Les
-          zones rurales du centre et du nord-est de la France apparaissent plus fragiles, tandis que les régions
-          littorales ou urbaines bénéficient d’une meilleure couverture médicale.
+          Le projet a été conçu dans une logique de clarté et de lisibilité. Les choix graphiques visent à rendre les
+          données compréhensibles par un public non spécialiste. Les cartes utilisent des gammes de couleurs contrastées,
+          permettant une lecture intuitive des écarts d’accessibilité et de vulnérabilité. Les graphiques en nuage de
+          points et en barres complètent cette approche en facilitant les comparaisons et l’identification des tendances
+          générales.
         </p>
-
         <p>
-          Les classements départementaux confirment ces écarts : certains départements, souvent urbains comme Paris, Lyon
-          ou Lille, concentrent un très grand nombre d’établissements hospitaliers, tandis que d’autres, plus ruraux
-          (Creuse, Lozère, Cantal…), restent en situation de sous-dotation.
+          Chaque visualisation est accompagnée d’un texte explicatif pour contextualiser l’information et orienter
+          l’interprétation. L’organisation du site repose sur une progression logique : les cartes permettent un
+          diagnostic visuel, les graphiques approfondissent les corrélations et la conclusion synthétise les résultats.
+          L’objectif éditorial est de proposer une lecture cohérente des inégalités territoriales de santé.
         </p>
+      </section>
 
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold">Interprétation des données et corrélations</h2>
         <p>
-          La carte combinant le taux de pauvreté et la densité hospitalière illustre un point crucial : les territoires
+          Les cartes d’APL moyenne montrent que l’accès aux médecins généralistes est très inégal selon les territoires.
+          Les zones rurales du centre et du nord-est de la France apparaissent plus fragiles, tandis que les régions
+          urbaines, littorales ou métropolitaines bénéficient d’une densité médicale plus forte. Les classements
+          départementaux confirment ces écarts : certains territoires, comme Paris, le Rhône ou la Gironde, concentrent
+          un grand nombre d’établissements hospitaliers, alors que d’autres, tels que la Creuse, la Lozère ou le Cantal,
+          restent sous-dotés.
+        </p>
+        <p>
+          La carte croisant le taux de pauvreté et la densité hospitalière illustre un point central : les territoires
           les plus pauvres sont souvent aussi ceux où l’offre de soins est la plus limitée. Cette superposition traduit
-          une double peine sociale et sanitaire.
+          une double fragilité sociale et sanitaire. Le graphique de corrélation entre l’APL et la pauvreté montre
+          une relation inverse : plus la pauvreté augmente, plus l’accessibilité médicale diminue. Ces deux phénomènes
+          apparaissent donc liés et renforcent les inégalités territoriales de santé.
         </p>
-
         <p>
-          Le graphique de corrélation entre APL et pauvreté montre une tendance faible mais réelle : une accessibilité
-          médicale plus faible s’accompagne globalement d’une plus forte précarité. Ces deux dimensions semblent donc
-          liées, renforçant les inégalités territoriales de santé.
+          La typologie des départements selon quatre profils (bien dotés et peu vulnérables, bien dotés mais vulnérables,
+          peu dotés mais peu vulnérables, peu dotés et très vulnérables) permet de dresser une carte claire des
+          territoires prioritaires pour les politiques publiques. Elle met en lumière la diversité des situations et la
+          nécessité d’adapter les actions à chaque contexte local.
         </p>
-
         <p>
-          La typologie des départements (4 profils santé-territoires) permet de catégoriser la France en zones “bien
-          dotées et peu vulnérables”, “bien dotées mais vulnérables”, “peu dotées mais peu vulnérables” et “peu dotées et
-          très vulnérables”. Cette classification facilite la compréhension des territoires prioritaires pour les
-          politiques publiques.
+          L’indice global de vulnérabilité sanitaire, qui combine pauvreté, chômage, part de personnes âgées et APL
+          moyenne, met en évidence un gradient territorial marqué : le centre de la France, le Nord et certaines zones
+          rurales cumulent les fragilités. Ces espaces nécessitent une attention renforcée en matière de prévention et
+          d’accès aux soins. Enfin, la corrélation positive entre accessibilité médicale et espérance de vie confirme la
+          cohérence d’ensemble : une meilleure accessibilité aux soins est globalement associée à une espérance de vie
+          plus élevée.
         </p>
+      </section>
 
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold">Identification des biais et limites</h2>
         <p>
-          L’indice global de vulnérabilité sanitaire, combinant pauvreté, chômage, âge et APL, met enfin en lumière un
-          gradient clair : le centre de la France, le Nord et certaines zones rurales cumulent les fragilités. Ces
-          territoires doivent faire l’objet d’une attention renforcée en matière de santé publique et de prévention.
+          Malgré leur richesse, ces analyses comportent plusieurs limites. L’APL reste un indicateur potentiel qui ne
+          traduit pas toujours la réalité vécue par les habitants, notamment les temps d’attente ou la disponibilité des
+          praticiens. Les données hospitalières issues de bases ouvertes comme FINESS ou OpenStreetMap peuvent être
+          partielles ou datées. Les indicateurs socio-économiques, quant à eux, ne prennent pas toujours en compte les
+          spécificités locales, telles que la présence de structures de soins alternatives ou la mise en place de
+          dispositifs de télémédecine. Enfin, les corrélations observées ne permettent pas de conclure à des relations
+          de causalité directe, mais elles soulignent des dynamiques territoriales cohérentes.
         </p>
+      </section>
 
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold">Synthèse</h2>
         <p>
-          Enfin, la corrélation entre accessibilité médicale et espérance de vie vient confirmer la cohérence de ces
-          analyses : une meilleure accessibilité aux soins est globalement associée à une espérance de vie plus élevée.
+          Ce diagnostic met en évidence une France à deux vitesses : une France urbaine et dense, mieux dotée en
+          services de santé, et une France rurale ou périphérique, caractérisée par une faible offre médicale et une
+          vulnérabilité socio-économique plus forte. L’enjeu pour les années à venir sera de rééquilibrer l’accès aux
+          soins par des politiques territoriales adaptées, soutenant l’installation de professionnels, le développement
+          des maisons de santé et des dispositifs de télémédecine, tout en intégrant davantage les déterminants sociaux
+          dans la planification des politiques de santé publique.
         </p>
-      </div>
-      <div class="text-center mt-12">
-  <a
-    href="/sources"
-    class="inline-block bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-blue-600 transition"
-  >
-     Voir les sources de données
-  </a>
-</div>
-    </section>
+      </section>
+    </article>
+
+    <!-- Boutons d'action -->
+    <div class="max-w-4xl mx-auto mt-12 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/cartes"
+        class="inline-block bg-white text-blue-700 border border-blue-700 font-semibold px-6 py-3 rounded-xl shadow-sm hover:bg-blue-50 transition"
+        >Retour aux dataviz</a
+      >
+      <a
+        href="/sources"
+        class="inline-block bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow hover:bg-blue-600 transition"
+        >Voir les sources</a
+      >
+    </div>
   </main>
 </Layout>
